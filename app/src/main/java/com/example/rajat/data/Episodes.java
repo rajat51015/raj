@@ -1,4 +1,4 @@
-/*package com.example.rajat.data;
+package com.example.rajat.data;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -34,4 +34,3 @@ Intent in=getIntent();
                 startActivity(i2);
             }
         });}}
-*/

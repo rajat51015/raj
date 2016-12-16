@@ -1,51 +1,35 @@
 package com.example.rajat.data;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.database.SQLException;
-import android.os.Environment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.nio.channels.FileChannel;
+import java.util.List;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 public static String p;
 
     Button b1;
-     DatabaseHelper f;
+     DatabaseHelper db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         p = getApplicationContext().getPackageName();
-        f=new DatabaseHelper(this);
-       /* try {
+        db=new DatabaseHelper(this);
+        // Inserting Contacts
+        Log.d("Insert: ", "Inserting ..");
+        db.addContact(new Contact(1,"Ravi","a", "9100000000"));
+        db.addContact(new Contact(2,"Srinivas","b", "9199999999"));
+        db.addContact(new Contact(3,"Tommy","c", "9522222222"));
+        db.addContact(new Contact(4,"Karthik","d", "9533333333"));
 
-            f.createDataBase();
 
-        } catch (IOException ioe) {
-
-            throw new Error("Unable to create database");
-
-        }
-
-        try {
-
-            f.openDataBase();
-
-        }catch(SQLException sqle){
-
-            throw sqle;
-
-        }
 
        b1=(Button) findViewById(R.id.b1);
         b1.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +39,9 @@ public static String p;
                 startActivity(i);
 
             }
-        });*/
+        });
+
+
+
     }
 }

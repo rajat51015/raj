@@ -1,66 +1,98 @@
 package com.example.rajat.data;
+
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.os.Environment;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.lang.reflect.Field;
-import java.nio.channels.FileChannel;
 
-public class DatabaseHelper extends SQLiteOpenHelper{
 
-    //The Android's default system path of your application database.
-    private static String DB_PATH = "/data/data/"+MainActivity.p+"/databases/";
+// All Static variables
+// Database Version
+public class DatabaseHelper extends SQLiteOpenHelper {
+private static final int DATABASE_VERSION = 1;
 
-    private static String DB_NAME = "Sherlocked.db";
+// Database Name
+private static final String DATABASE_NAME = "Sherlock";
 
-    private SQLiteDatabase myDataBase;
+// Contacts table name
+private static final String TABLE_CONTACTS = "Sherlocked";
 
-  //  private final Context myContext;
+// Contacts Table Columns names
+private static final String KEY_ID = "id";
+private static final String Episode_name = "Name";
+private static final String Episode_Summary = "Summary";
+    private static final String Episode_Duration="Duration";
 
-    /**
-     * Constructor
-     * Takes and keeps a reference of the passed context in order to access to the application assets and resources.
-     * @param context
-     */
+
+
     public DatabaseHelper(Context context) {
-
-        super(context, DB_NAME, null, 1);
-       // this.myContext = context;
-        myDataBase=this.getWritableDatabase();
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
-
-
-
+    // Creating Tables
     @Override
     public void onCreate(SQLiteDatabase db) {
-
-db.execSQL("create table"+DB_NAME+"(Id Integer Primary key Autoincrement,epsidesumm Text,epdur Integer,Eprev Text)");
+        String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_CONTACTS + "("
+                + KEY_ID + " INTEGER PRIMARY KEY," + Episode_name + " TEXT,"
+                + Episode_Summary + " TEXT" +Episode_Duration+"INTEGER"+")";
+        db.execSQL(CREATE_CONTACTS_TABLE);
     }
 
+    // Upgrading database
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-myDataBase.execSQL("drop table if exists "+DB_NAME);
-        onCreate(myDataBase);
-    }}
-/*public Cursor getData(String Id)
-{
-myDataBase=this.getReadableDatabase();
-    String q="select from"+DB_NAME+"where Field 1='"+Id+"'";
+        // Drop older table if existed
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_CONTACTS);
 
+        // Create tables again
+        onCreate(db);
+    }
+    // Adding new contact
+   void addContact(Contact contact) {
+        SQLiteDatabase db = this.getWritableDatabase();
 
-            Cursor c=myDataBase.rawQuery(q,null);
-    return c;
+        ContentValues values = new ContentValues();
+        values.put(Episode_name, contact.getName()); // Contact Name
+        values.put(Episode_Summary, contact.getName());// Contact Phone
+        values.put(Episode_Duration,contact.getPhoneNumber());
+
+        // Inserting Row
+        db.insert(TABLE_CONTACTS, null, values);
+        db.close(); // Closing database connection
+    }
+    // Getting single contact
+    Contact getContact(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.query(TABLE_CONTACTS, new String[] { KEY_ID,
+                        Episode_name, Episode_Summary,Episode_Duration }, KEY_ID + "=?",
+                new String[] { String.valueOf(id) }, null, null, null, null);
+        if (cursor != null)
+            cursor.moveToFirst();
+
+        Contact contact = new Contact(Integer.parseInt(cursor.getString(0)),
+                cursor.getString(1), cursor.getString(2),cursor.getString(3));
+        // return contact
+        return contact;
 
 
 }
-}*/
+    // Getting contacts Count
+    public int getContactsCount() {
+        String countQuery = "SELECT  * FROM " + TABLE_CONTACTS;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        cursor.close();
+
+        // return count
+        return cursor.getCount();
+    }
+public Cursor getData(String a)
+{
+    SQLiteDatabase db=this.getReadableDatabase();
+    String q="SELECT * FROM "+TABLE_CONTACTS+"WHERE NUM ='" +a+ "'";
+    Cursor c=db.rawQuery(q,null);
+            return c;
+}
+}

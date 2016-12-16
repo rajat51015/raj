@@ -1,6 +1,6 @@
 package com.example.rajat.data;
 
-/*import android.content.Intent;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,4 +29,4 @@ l1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
         i1.putExtra("key",h);
         startActivity(i1);
     }
-});}}*/
+});}}

@@ -1,4 +1,4 @@
-/*package com.example.rajat.data;
+package com.example.rajat.data;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -24,23 +24,23 @@ g=q.getExtras();
         String a1=g.getString("b");String a2=g.getString("a");
         int a=Integer.parseInt(a1);
         int b=Integer.parseInt(a2);
-        if(a==2)
+      /*  if(a==2)
         {  b=b+3;}
         else if(a==3)
         {b=b+6;}
         else
-        {b=b+9;}
+        {b=b+9;}*/
         String s3=String.valueOf(b);
         Cursor d=f.getData(s3);
+
         while(d.moveToNext())
         {
             t1.setText(d.getString(1));
             t2.setText(d.getString(2));
             t3.setText(d.getString(3));
-            t4.setText(d.getString(4));
+
 
 
         }
     }
 }
-*/
