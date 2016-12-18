@@ -5,7 +5,7 @@ public class Contact {
     //private variables
     int _id;
     String _name;
-    String _en;
+
     String _es;
     String _ed;
 
@@ -17,15 +17,15 @@ public class Contact {
     public Contact(int id, String name, String _en,String _es,String _ed){
         this._id = id;
         this._name = name;
-        this._en = _en;
-        this._es = _es;
-        this._ed = _ed;
+
+        this._es = _en;
+        this._ed = _es;
     }
 
     // constructor
-   /* public Contact(String name, String _phone_number){
+   /* public Contact(String name) {
         this._name = name;
-        this._en = _en;}*/
+    }*/
 
     // getting ID
     public int getID(){
@@ -48,14 +48,14 @@ public class Contact {
     }
 
     // getting phone number
-    public String getPhoneNumber(){
+ /*   public String getPhoneNumber(){
         return this._en;
-    }
+    }*/
 
     // setting phone number
-    public void setPhoneNumber(String en){
+  /*  public void setPhoneNumber(String en){
         this. _en = en;
-    }
+    }*/
     public String getes()
     {
         return  this._es;

@@ -25,8 +25,9 @@ l1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         h=i;
+        String q=String.valueOf(h);
         Intent i1=new Intent(Seasons.this,Episodes.class);
-        i1.putExtra("key",h);
+        i1.putExtra("key",q);
         startActivity(i1);
     }
 });}}

@@ -24,11 +24,12 @@ public static String p;
         db=new DatabaseHelper(this);
         // Inserting Contacts
         Log.d("Insert: ", "Inserting ..");
-        db.addContact(new Contact(1,"Ravi","a", "9100000000"));
-        db.addContact(new Contact(2,"Srinivas","b", "9199999999"));
-        db.addContact(new Contact(3,"Tommy","c", "9522222222"));
-        db.addContact(new Contact(4,"Karthik","d", "9533333333"));
 
+
+        db.addContact(new Contact(1, "Ravi", "a", "9100000000"));
+        db.addContact(new Contact(2, "Srinivas", "b", "9199999999"));
+        db.addContact(new Contact(3, "Tommy", "c", "9522222222"));
+        db.addContact(new Contact(4, "Karthik", "d", "9533333333"));
 
 
        b1=(Button) findViewById(R.id.b1);

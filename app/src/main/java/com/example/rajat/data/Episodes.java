@@ -24,13 +24,14 @@ ListView l2;public int k;Bundle e;
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 k=i;
+                String o=String.valueOf(k);
 Intent in=getIntent();
                 Intent i2=new Intent(Episodes.this,Description.class);
                 e=in.getExtras();
                 String t=e.getString("key");
-                int j=Integer.parseInt(t);
-                i2.putExtra("a",k);
-                i2.putExtra("b",j);
+
+                i2.putExtra("a",t);
+                i2.putExtra("b",o);
                 startActivity(i2);
             }
         });}}
