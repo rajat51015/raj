@@ -35,7 +35,7 @@ private static final String Episode_Summary = "Summary";
     public void onCreate(SQLiteDatabase db) {
         String CREATE_CONTACTS_TABLE = " CREATE TABLE " + TABLE_CONTACTS + "("
                 + KEY_ID + " INTEGER PRIMARY KEY," + Episode_name + " TEXT,"
-                + Episode_Summary + " TEXT," + Episode_Duration + " TEXT" + ")";
+                + Episode_Summary + " TEXT," + Episode_Duration + " TEXT," + ")";
         db.execSQL(CREATE_CONTACTS_TABLE);
     }
 
@@ -64,12 +64,12 @@ private static final String Episode_Summary = "Summary";
         db.close(); // Closing database connection
     }
     // Getting single contact
-  /* Contact getContact(int id) {
+   Contact getContact(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(TABLE_CONTACTS, new String[] { KEY_ID,
-                        Episode_name, Episode_Summary,Episode_Duration }, KEY_ID + "1",
-                new String[] { String.valueOf(id) }, null, null,null);
+                        Episode_name, Episode_Summary, Episode_Duration }, KEY_ID + "1",
+                new String[] { String.valueOf(id) }, null, null,null,null);
         if (cursor != null)
             cursor.moveToFirst();
 
@@ -79,7 +79,7 @@ private static final String Episode_Summary = "Summary";
         return contact;
 
 
-}*/
+}
     // Getting contacts Count
   /* public int getContactsCount() {
         String countQuery = "SELECT  * FROM " + TABLE_CONTACTS;
@@ -92,7 +92,7 @@ private static final String Episode_Summary = "Summary";
     }*/
 public Cursor getData(String a)
 {
-    SQLiteDatabase db=this.getReadableDatabase();
+    SQLiteDatabase db=this.getWritableDatabase();
     String q=" SELECT * FROM "+TABLE_CONTACTS+" WHERE id = '" + a + "'";
     Cursor c=db.rawQuery(q,null);
             return c;

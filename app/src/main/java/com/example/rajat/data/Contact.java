@@ -3,18 +3,13 @@ package com.example.rajat.data;
 public class Contact {
 
     //private variables
-    int _id;
-    String _name;
+    private int _id;
+    private String _name;
+    private String _es;
+    private String _ed;
 
-    String _es;
-    String _ed;
-
-    // Empty constructor
-    public Contact(int i, String string, String cursorString, String s){
-
-    }
     // constructor
-    public Contact(int id, String name, String _en,String _es,String _ed){
+    public Contact(int id, String name, String _en, String _es) {
         this._id = id;
         this._name = name;
 
@@ -28,22 +23,22 @@ public class Contact {
     }*/
 
     // getting ID
-    public int getID(){
+    public int getID() {
         return this._id;
     }
 
     // setting id
-    public void setID(int id){
+    public void setID(int id) {
         this._id = id;
     }
 
     // getting name
-    public String getName(){
+    public String getName() {
         return this._name;
     }
 
     // setting name
-    public void setName(String name){
+    public void setName(String name) {
         this._name = name;
     }
 
@@ -56,21 +51,21 @@ public class Contact {
   /*  public void setPhoneNumber(String en){
         this. _en = en;
     }*/
-    public String getes()
-    {
-        return  this._es;
+    public String getes() {
+        return this._es;
     }
-    public void setes(String es)
-    {
-        this._es=es;
+
+    public void setes(String es) {
+        this._es = es;
 
     }
- public String geted(){
- return  this._ed;
- }
-public void steed(String ed)
-{
-    this._ed=ed;
 
-}
+    public String geted() {
+        return this._ed;
+    }
+
+    public void steed(String ed) {
+        this._ed = ed;
+
+    }
 }

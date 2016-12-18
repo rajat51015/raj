@@ -46,5 +46,12 @@ public class Description extends AppCompatActivity {
 
 
         }
-    }
+   /*     Contact e=f.getContact(1);
+        t1.setText(e.getID());
+        t2.setText(e.getName());
+        t3.setText(e.getes());
+        t4.setText(e.geted());
+
+
+    }*/}
 }
