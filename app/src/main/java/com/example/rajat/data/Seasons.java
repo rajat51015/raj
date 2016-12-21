@@ -11,7 +11,7 @@ import android.widget.ExpandableListView;
 import android.widget.ListView;
 
 public class Seasons extends AppCompatActivity {
-ListView l1;public int h;
+ListView l1;public long h;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +24,7 @@ String s[]=new String[]{"Season 1","Season 2","Season 3","Season 4"};
 l1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        h=i;
+        h=l;
         String q=String.valueOf(h);
         Intent i1=new Intent(Seasons.this,Episodes.class);
         i1.putExtra("key",q);

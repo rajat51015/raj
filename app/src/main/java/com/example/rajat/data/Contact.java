@@ -1,5 +1,10 @@
 package com.example.rajat.data;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
+import java.io.ByteArrayOutputStream;
+
 public class Contact {
 
     //private variables
@@ -7,14 +12,16 @@ public class Contact {
     private String _name;
     private String _es;
     private String _ed;
+    Bitmap _d;
 
     // constructor
-    public Contact(int id, String name, String _en, String _es) {
+    public Contact(int id, String name, String _en, String _es,Bitmap d) {
         this._id = id;
         this._name = name;
 
         this._es = _en;
         this._ed = _es;
+this._d=d;
     }
 
     // constructor
@@ -67,5 +74,26 @@ public class Contact {
     public void steed(String ed) {
         this._ed = ed;
 
+    }
+    public void setb(Bitmap b)
+    {
+        this._d=b;
+    }
+        public byte[] getb(){
+
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            this._d.compress(Bitmap.CompressFormat.PNG, 0, stream);
+            return stream.toByteArray();
+
+
+            }
+
+
+
+
+
+    // convert from byte array to bitmap
+    public static Bitmap getImage(byte[] image) {
+        return BitmapFactory.decodeByteArray(image, 0, image.length);
     }
 }

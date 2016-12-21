@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class Episodes extends AppCompatActivity {
-ListView l2;public int k;Bundle e;
+ListView l2;public long k;Bundle e;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +23,7 @@ ListView l2;public int k;Bundle e;
         l2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                k=i;
+                k=l;
                 String o=String.valueOf(k);
 Intent in=getIntent();
                 Intent i2=new Intent(Episodes.this,Description.class);
