@@ -13,15 +13,19 @@ public class Contact {
     private String _es;
     private String _ed;
     Bitmap _d;
+    String _r;
+    String _w;
 
     // constructor
-    public Contact(int id, String name, String _en, String _es,Bitmap d) {
+    public Contact(int id, String name, String _en, String _es,Bitmap d,String r,String w) {
         this._id = id;
         this._name = name;
 
         this._es = _en;
         this._ed = _es;
 this._d=d;
+        this._r=r;
+        this._w=w;
     }
 
     // constructor
@@ -74,6 +78,22 @@ this._d=d;
     public void steed(String ed) {
         this._ed = ed;
 
+    }
+    public void setr(String r)
+    {
+        this._r=r;
+    }
+    public String getr()
+    {
+        return this._r;
+    }
+    public void setweb(String w)
+    {
+        this._w=w;
+    }
+    public String getweb()
+    {
+        return this._w;
     }
     public void setb(Bitmap b)
     {

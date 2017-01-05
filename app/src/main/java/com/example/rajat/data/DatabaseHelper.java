@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 
 import java.sql.Blob;
 
@@ -29,7 +30,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String Episode_Summary = "Summary";
     private static final String Episode_Duration = "Duration";
     private static final String KEY_IMAGE = "image_data";
-
+private static final String Rate="Rate";
+    private static final String Web="Web";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -42,8 +44,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + KEY_ID + " INTEGER PRIMARY KEY,"
                 + Episode_name + " TEXT,"
                 + Episode_Summary + " TEXT,"
-                + Episode_Duration + " TEXT,"+KEY_IMAGE
-                + " BLOB)";
+                + Episode_Duration + " TEXT,"
+                +KEY_IMAGE + " BLOB,"
+                + Rate + " TEXT,"
+                +Web +" TEXT)";
         db.execSQL(CREATE_CONTACTS_TABLE);
     }
 
@@ -68,8 +72,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(Episode_Summary, contact.getes());// Contact Phone
         values.put(Episode_Duration, contact.geted());
 values.put(KEY_IMAGE,contact.getb());
-
+values.put(Rate,contact.getr());
+        values.put(Web,contact.getweb());
         // Inserting Row
+        Log.d("KEY", contact.getID()+"");
+
         db.insert(TABLE_CONTACTS, null, values);
         db.close(); // Closing database connection
     }

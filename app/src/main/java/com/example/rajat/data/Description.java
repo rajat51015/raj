@@ -6,17 +6,15 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.text.util.Linkify;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
-
-import java.io.ByteArrayInputStream;
-import java.sql.Blob;
 
 public class Description extends AppCompatActivity {
     DatabaseHelper f;
     Bundle g;long p;
-    TextView t1, t2, t3, t4;ImageView v;
+    TextView t1, t2, t3, t4,t6;ImageView v;RatingBar t5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +25,8 @@ public class Description extends AppCompatActivity {
         t2 = (TextView) findViewById(R.id.t2);
         t3 = (TextView) findViewById(R.id.t3);
         t4 = (TextView) findViewById(R.id.t4);
+        t5 = (RatingBar) findViewById(R.id.t5);
+        t6 = (TextView) findViewById(R.id.t6);
         v=(ImageView) findViewById(R.id.v);
 
         Intent q = getIntent();
@@ -54,9 +54,12 @@ public class Description extends AppCompatActivity {
             t3.setText(d.getString(2));
             t4.setText(d.getString(3));
  byte l[]=d.getBlob(4);
+
             Bitmap bp= BitmapFactory.decodeByteArray(l, 0, l.length);
 v.setImageBitmap(bp);
-
+t5.setRating(Float.parseFloat(d.getString(5)));
+            t6.setText(d.getString(6)); //here is the error .. null pointer exception! :(
+            Linkify.addLinks(t6,Linkify.WEB_URLS);
 
 
 

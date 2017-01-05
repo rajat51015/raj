@@ -14,75 +14,33 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/s">
 
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="500dp"
+            android:layout_height="wrap_content"
             android:id="@+id/r">
-
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <ImageView
+                android:layout_width="500dp"
+                android:layout_height="230dp"
+                android:src="@drawable/qw"
+                android:id="@+id/v"
+                android:adjustViewBounds="false"
+                android:cropToPadding="false"
                 android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginRight="59dp"
-                android:layout_marginEnd="59dp"
-                android:id="@+id/t1" />
-
-            <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginRight="51dp"
-                android:layout_marginEnd="51dp"
-                android:id="@+id/t2"
-                android:layout_alignBottom="@+id/textView20" />
-
-            <TextView
-                android:text="Episode Name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView20"
-                android:layout_below="@+id/textView22"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="48dp" />
+                android:layout_alignParentStart="true" />
 
             <TextView
                 android:text="Episode Number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView22"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true" />
-
-            <TextView
-                android:text="Episode Summary"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView24"
-                android:layout_below="@+id/textView20"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="44dp" />
+                android:layout_alignBaseline="@+id/t1"
 
 
-            <TextView
-                android:text="Episode Duratin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView26"
-                android:layout_below="@+id/t3"
-                android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true" />
 
@@ -90,34 +48,150 @@
                 android:text="TextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/t4"
-               android:layout_below="@+id/t3"
-                android:layout_alignParentBottom="true"
-                android:layout_alignLeft="@+id/t1"
-                android:layout_alignStart="@+id/t1" />
+                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
+                android:id="@+id/t1"
+
+android:layout_below="@+id/v"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentRight="true"
+
+                />
+
+            <TextView
+                android:text="Episode Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView20"
+
+                android:layout_below="@+id/textView22"
+                android:layout_marginTop="260dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textView20"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="21dp"
+                android:layout_marginEnd="21dp"
+                android:id="@+id/t2"
+               />
+
+
+
+
+
+
+
+            <TextView
+                android:text="Episode Summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView24"
+
+                android:layout_below="@+id/textView20"
+                android:layout_marginTop="20dp"
+               />
 
             <TextView
                 android:text="TextView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="380dp"
                 android:id="@+id/t3"
-                android:layout_below="@+id/textView24"
-                android:layout_toStartOf="@+id/t1"
-                android:layout_marginTop="23dp"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
 
-            <ImageView
+
+                android:layout_below="@+id/textView24"
+                android:layout_marginTop="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:text="Episode Duration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/qw"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="198dp"
-                android:id="@+id/v" />
+                android:id="@+id/textView26"
+                android:layout_below="@+id/t3"
+                android:layout_marginTop="20dp"
+
+                android:layout_alignRight="@+id/textView22"
+                android:layout_alignEnd="@+id/textView22" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:id="@+id/t4"
+                android:layout_alignParentRight="true"
+                android:layout_alignBaseline="@+id/textView26"
+                android:layout_marginRight="21dp"
+                android:layout_marginEnd="21dp"
+                android:layout_alignRight="@+id/textView26"
+
+                />
+
+            <TextView
+                android:text="Episode Rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+              android:layout_below="@+id/textView26"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+
+                android:id="@+id/textView6" />
+
+            <RatingBar
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:attr/ratingBarStyleSmall"
+
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="34dp"
+                android:layout_marginEnd="34dp"
+                android:numStars="5"
+                android:id="@+id/t5"
+                android:layout_alignTop="@+id/textView6" />
+
+
+            <TextView
+                android:text="Episode Trailer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_below="@+id/textView6"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+
+
+
+                android:id="@+id/textView" />
+
+            <TextView
+                android:text="TextView"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textView"
+
+
+                android:layout_alignParentRight="true"
+
+                android:layout_marginRight="5dp"
+
+                android:autoLink="web"
+                android:id="@+id/t6" />
 
 
         </RelativeLayout>
 
     </ScrollView>
-    </RelativeLayout>
+
+</RelativeLayout>

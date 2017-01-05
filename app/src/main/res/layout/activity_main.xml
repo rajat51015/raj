@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -14,8 +15,84 @@
         android:text="SEASON  LIST"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="190dp"
-        android:id="@+id/b1" />
+        android:id="@+id/b1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="100dp"
+        android:layout_marginEnd="100dp" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/s"
+        android:id="@+id/i"
+        android:layout_marginBottom="199dp"
+        android:layout_above="@+id/b1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="CAST"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/b1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="171dp"
+        android:id="@+id/a1" />
+
+    <TextView
+        android:text="Benedict Cumerbatch(Sherlock),Martin Freeman(Watson)"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/a2"
+        android:layout_alignLeft="@+id/b1"
+        android:layout_alignStart="@+id/b1"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/a1" />
+
+    <TextView
+        android:text="Based On-"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/a2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="39dp"
+        android:id="@+id/a3" />
+
+    <TextView
+        android:text="Arthur Coana Doyle's novel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/a4"
+        android:layout_alignBaseline="@+id/a3"
+        android:layout_alignBottom="@+id/a2"
+        android:layout_alignLeft="@+id/a2"
+        android:layout_alignStart="@+id/a2" />
+
+    <TextView
+        android:text="App Created By-"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="22dp"
+        android:id="@+id/a5"
+        android:layout_above="@+id/b1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Rajat  Singh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/a8"
+        android:layout_alignTop="@+id/a5"
+        android:layout_alignRight="@+id/b1"
+        android:layout_alignEnd="@+id/b1"
+        android:layout_alignLeft="@+id/a4"
+        android:layout_alignStart="@+id/a4" />
 </RelativeLayout>
